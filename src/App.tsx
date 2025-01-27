@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import "./App.css";
 import Loading from "./pages/Loading";
-import Hero from "./pages/Hero";
 import Home from "./pages/Home";
 
 const App: React.FC = () => {
@@ -15,7 +14,7 @@ const App: React.FC = () => {
       // Only run the timer if the current path is the root (initial loading)
       const timer = setTimeout(() => {
         setLoading(false); // Stop loading after 10 seconds
-        navigate("/start"); // Redirect to `/start` after loading is done
+        navigate("/home"); // Redirect to `/start` after loading is done
       }, 10000); // 10 seconds for the loading screen
 
       return () => clearTimeout(timer); // Clean up the timer
@@ -48,7 +47,7 @@ const App: React.FC = () => {
         }}
       >
         <source
-          src="../src/assets/jumpingjacklanding.mp4"
+          src="https://cdn.pixabay.com/video/2021/09/27/89894-616430996_large.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
@@ -57,7 +56,7 @@ const App: React.FC = () => {
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Loading />} />
-        <Route path="/start" element={<Hero />} />
+        {/* <Route path="/start" element={<Hero />} /> */}
         <Route path="/home" element={<Home />} />
       </Routes>
     </div>

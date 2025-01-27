@@ -15,6 +15,7 @@ const Hero: React.FC = () => {
 
   return (
     <div className="hero-container" data-aos="zoom-out">
+       <p className="text-black font-bold neon-text neon-yellow">claim now</p>
       <div className="left-section">
         <img src={game} alt="Me" />
       </div>
